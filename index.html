@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horizonte RP - Redireccionando</title>
+    <script>
+        window.onload = function() {
+            // Esta parte lee lo que el bot manda después del "?"
+            const params = new URLSearchParams(window.location.search);
+            const linkRoblox = params.get('url'); 
+
+            if (linkRoblox) {
+                // Si hay link, nos vamos a Roblox
+                window.location.href = linkRoblox;
+            } else {
+                // Si no hay link (o se borró), mostramos error
+                document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:50px;'>❌ ACCESO CERRADO O SESIÓN FINALIZADA</h1>";
+            }
+        };
+    </script>
+</head>
+<body style="background-color: #1a1a1a;">
+    <h2 style="color: #00a2ff; text-align: center; margin-top: 100px; font-family: sans-serif;">
+        CONECTANDO A HORIZONTE RP...
+    </h2>
+</body>
+</html>
