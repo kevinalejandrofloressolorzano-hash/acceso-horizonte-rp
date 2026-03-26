@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Horizonte RP - Redireccionando</title>
+    <meta charset="UTF-8">
+    <title>Horizonte RP - Conectando</title>
     <script>
         window.onload = function() {
-            // Esta parte lee lo que el bot manda después del "?"
             const params = new URLSearchParams(window.location.search);
-            const linkRoblox = params.get('url'); 
+            let target = params.get('url'); 
 
-            if (linkRoblox) {
-                // Si hay link, nos vamos a Roblox
-                window.location.href = linkRoblox;
+            if (target) {
+                // Limpiamos espacios o caracteres raros que el bot pueda enviar
+                target = target.trim();
+                
+                // Forzamos la redirección
+                window.location.replace(target);
             } else {
-                // Si no hay link (o se borró), mostramos error
-                document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:50px;'>❌ ACCESO CERRADO O SESIÓN FINALIZADA</h1>";
+                document.body.innerHTML = "<h1 style='color:white;text-align:center;font-family:sans-serif;margin-top:100px;'>❌ ERROR: ACCESO NO CONFIGURADO</h1>";
             }
         };
     </script>
 </head>
-<body style="background-color: #1a1a1a;">
-    <h2 style="color: #00a2ff; text-align: center; margin-top: 100px; font-family: sans-serif;">
-        CONECTANDO A HORIZONTE RP...
+<body style="background-color: #0b0b0b;">
+    <h2 style="color: #198000; text-align: center; margin-top: 150px; font-family: sans-serif;">
+        ENTRANDO A GREENVILLE DISFRUTA DE ESTA SESIÓN!...
     </h2>
 </body>
 </html>
